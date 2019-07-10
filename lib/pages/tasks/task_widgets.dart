@@ -27,7 +27,7 @@ class TasksPage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: list.length == 0
-          ? MessageInCenterWidget("No Task Added")
+          ? MessageInCenterWidget("No Maintenance Activities Added")
           : Container(
               child: ListView.builder(
                   itemCount: list.length,

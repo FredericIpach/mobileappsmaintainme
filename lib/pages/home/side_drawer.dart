@@ -20,8 +20,8 @@ class SideDrawer extends StatelessWidget {
         padding: EdgeInsets.all(0.0),
         children: <Widget>[
           UserAccountsDrawerHeader(
-            accountName: Text("Burhanuddin Rashid"),
-            accountEmail: Text("burhanrashid5253@gmail.com"),
+            accountName: Text("Not Logged In"),
+            accountEmail: Text(""),
             otherAccountsPictures: <Widget>[
               IconButton(
                   icon: Icon(
@@ -44,14 +44,14 @@ class SideDrawer extends StatelessWidget {
           ),
           ListTile(
               leading: Icon(Icons.inbox),
-              title: Text("Inbox"),
+              title: Text("Next Maintenances"),
               onTap: () {
                 var project = Project.getInbox();
                 homeBloc.applyFilter(
                     project.name, Filter.byProject(project.id));
                 Navigator.pop(context);
               }),
-          ListTile(
+         /* ListTile(
               onTap: () {
                 homeBloc.applyFilter("Today", Filter.byToday());
                 Navigator.pop(context);
@@ -65,7 +65,7 @@ class SideDrawer extends StatelessWidget {
             },
             leading: Icon(Icons.calendar_today),
             title: Text("Next 7 Days"),
-          ),
+          ), */
           BlocProvider(
             bloc: ProjectBloc(ProjectDB.get()),
             child: ProjectPage(),

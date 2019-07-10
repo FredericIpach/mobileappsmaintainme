@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: StreamBuilder<String>(
-            initialData: 'Today',
+            initialData: 'Next Maintenances',
             stream: homeBloc.title,
             builder: (context, snapshot) {
               return Text(snapshot.data);

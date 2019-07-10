@@ -33,7 +33,7 @@ class ProjectExpansionTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpansionTile(
       leading: Icon(Icons.book),
-      title: Text("Projects",
+      title: Text("Vehicles",
           style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.bold)),
       children: buildProjects(context),
     );
@@ -90,5 +90,8 @@ class ProjectRow extends StatelessWidget {
         ),
       ),
     );
+
+
+
   }
 }

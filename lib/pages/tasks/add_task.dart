@@ -21,7 +21,7 @@ class AddTaskScreen extends StatelessWidget {
     return Scaffold(
       key: _scaffoldState,
       appBar: AppBar(
-        title: Text("Add Task"),
+        title: Text("Add Maintenance Activity"),
       ),
       body: ListView(
         children: <Widget>[
@@ -38,13 +38,13 @@ class AddTaskScreen extends StatelessWidget {
                   },
                   maxLines: null,
                   keyboardType: TextInputType.multiline,
-                  decoration: InputDecoration(hintText: "Title")),
+                  decoration: InputDecoration(hintText: "Maintenance Activity")),
             ),
             key: _formState,
           ),
           ListTile(
             leading: Icon(Icons.book),
-            title: Text("Project"),
+            title: Text("Vehicle"),
             subtitle: StreamBuilder<Project>(
               stream: createTaskBloc.selectedProject,
               initialData: Project.getInbox(),
@@ -67,7 +67,7 @@ class AddTaskScreen extends StatelessWidget {
               _selectDate(context);
             },
           ),
-          ListTile(
+         /* ListTile(
             leading: Icon(Icons.flag),
             title: Text("Priority"),
             subtitle: StreamBuilder(
@@ -79,8 +79,8 @@ class AddTaskScreen extends StatelessWidget {
             onTap: () {
               _showPriorityDialog(createTaskBloc, context);
             },
-          ),
-          ListTile(
+          ), */
+        /* ListTile(
               leading: Icon(Icons.label),
               title: Text("Lables"),
               subtitle: StreamBuilder(
@@ -90,23 +90,35 @@ class AddTaskScreen extends StatelessWidget {
               ),
               onTap: () {
                 _showLabelsDialog(context);
-              }),
-          ListTile(
-            leading: Icon(Icons.mode_comment),
-            title: Text("Comments"),
-            subtitle: Text("No Comments"),
-            onTap: () {
-              showSnackbar(_scaffoldState, "Comming Soon");
-            },
-          ),
-          ListTile(
+              }),*/
+
+
+
+    ListTile(
+    leading: Icon(Icons.map),
+    title: Text("Location"),
+    subtitle: Text("No Location Assigned Yet"),
+    onTap: () {
+    showSnackbar(_scaffoldState, "Comming Soon");
+    },
+    ),
+    ListTile(
+    leading: Icon(Icons.mode_comment),
+    title: Text("Comments"),
+    subtitle: Text("No Comments"),
+    onTap: () {
+    showSnackbar(_scaffoldState, "Comming Soon");
+    },
+    ),
+          /*ListTile(
             leading: Icon(Icons.timer),
             title: Text("Reminder"),
             subtitle: Text("No Reminder"),
             onTap: () {
               showSnackbar(_scaffoldState, "Comming Soon");
             },
-          )
+
+          )*/
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -161,7 +173,7 @@ class AddTaskScreen extends StatelessWidget {
               initialData: List<Project>(),
               builder: (context, snapshot) {
                 return SimpleDialog(
-                  title: const Text('Select Project'),
+                  title: const Text('Choose Vehicle'),
                   children:
                       buildProjects(createTaskBloc, context, snapshot.data),
                 );
