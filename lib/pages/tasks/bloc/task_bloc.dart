@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:collection';
 
 import 'package:flutter_app/bloc/bloc_provider.dart';
-import 'package:flutter_app/pages/tasks/task_db.dart';
 import 'package:flutter_app/pages/tasks/models/tasks.dart';
+import 'package:flutter_app/pages/tasks/task_db.dart';
 
 class TaskBloc implements BlocBase {
   ///
@@ -65,9 +65,8 @@ class TaskBloc implements BlocBase {
 
   void filterTasksForNextWeek() {
     var dateTime = DateTime.now();
-    var taskStartTime =
-        DateTime(dateTime.year, dateTime.month, dateTime.day)
-            .millisecondsSinceEpoch;
+    var taskStartTime = DateTime(dateTime.year, dateTime.month, dateTime.day)
+        .millisecondsSinceEpoch;
     var taskEndTime =
         DateTime(dateTime.year, dateTime.month, dateTime.day + 7, 23, 59)
             .millisecondsSinceEpoch;

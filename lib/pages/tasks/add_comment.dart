@@ -23,13 +23,12 @@ Future<String> showCommentDialog(BuildContext context) async {
           actions: <Widget>[
             FlatButton(
                 onPressed: () {
-                  Navigator.pop(context,"");
+                  Navigator.pop(context, "");
                 },
                 child: Text("CANCEL",
-                    style:
-                        TextStyle(color: Theme.of(context).accentColor))),
+                    style: TextStyle(color: Theme.of(context).accentColor))),
             FlatButton(
-                onPressed:() {},
+                onPressed: () {},
                 child: Text("SAVE",
                     style: TextStyle(color: Theme.of(context).accentColor)))
           ],

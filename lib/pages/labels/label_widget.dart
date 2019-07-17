@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/bloc/bloc_provider.dart';
-import 'package:flutter_app/pages/tasks/bloc/task_bloc.dart';
-import 'package:flutter_app/pages/labels/label_db.dart';
-import 'package:flutter_app/pages/labels/label.dart';
 import 'package:flutter_app/pages/home/home_bloc.dart';
 import 'package:flutter_app/pages/labels/add_label.dart';
+import 'package:flutter_app/pages/labels/label.dart';
 import 'package:flutter_app/pages/labels/label_bloc.dart';
+import 'package:flutter_app/pages/labels/label_db.dart';
+import 'package:flutter_app/pages/tasks/bloc/task_bloc.dart';
 
 class LabelPage extends StatelessWidget {
   @override

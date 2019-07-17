@@ -90,8 +90,5 @@ class ProjectRow extends StatelessWidget {
         ),
       ),
     );
-
-
-
   }
 }

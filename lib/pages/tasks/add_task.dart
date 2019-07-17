@@ -11,9 +11,21 @@ import 'package:flutter_app/utils/color_utils.dart';
 import 'package:flutter_app/utils/date_util.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> _scaffoldState =
-      GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
   final GlobalKey<FormState> _formState = GlobalKey<FormState>();
+
+//  Completer<GoogleMapController> _controller = Completer();
+//
+//  static final CameraPosition _kGooglePlex = CameraPosition(
+//    target: LatLng(37.42796133580664, -122.085749655962),
+//    zoom: 14.4746,
+//  );
+//
+//  static final CameraPosition _kLake = CameraPosition(
+//      bearing: 192.8334901395799,
+//      target: LatLng(37.43296265331129, -122.08832357078792),
+//      tilt: 59.440717697143555,
+//      zoom: 19.151926040649414);
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +50,37 @@ class AddTaskScreen extends StatelessWidget {
                   },
                   maxLines: null,
                   keyboardType: TextInputType.multiline,
-                  decoration: InputDecoration(hintText: "Maintenance Activity")),
+                  decoration:
+                      InputDecoration(hintText: "Maintenance Activity")),
             ),
             key: _formState,
           ),
+
+//          GoogleMap(
+//            mapType: MapType.hybrid,
+//            initialCameraPosition: _kGooglePlex,
+//            myLocationEnabled: true,
+//            myLocationButtonEnabled: true,
+//            onMapCreated: (GoogleMapController controller) {
+//              _controller.complete(controller);
+//            },
+//          ),
+
+//
+//          ListTile(
+//            leading: Icon(Icons.build),
+//            title: Text("Maintenance Activity"),
+//            subtitle: StreamBuilder<Project>(
+//              stream: createTaskBloc.selectedProject,
+//              initialData: Project.getInbox(),
+//              builder: (context, snapshot) => Text(snapshot.data.name),
+//            ),
+//            onTap: () {
+//              _showProjectsDialog(createTaskBloc, context);
+//            },
+//          ),
           ListTile(
-            leading: Icon(Icons.book),
+            leading: Icon(Icons.directions_car),
             title: Text("Vehicle"),
             subtitle: StreamBuilder<Project>(
               stream: createTaskBloc.selectedProject,
@@ -67,7 +104,7 @@ class AddTaskScreen extends StatelessWidget {
               _selectDate(context);
             },
           ),
-         /* ListTile(
+          /* ListTile(
             leading: Icon(Icons.flag),
             title: Text("Priority"),
             subtitle: StreamBuilder(
@@ -80,7 +117,7 @@ class AddTaskScreen extends StatelessWidget {
               _showPriorityDialog(createTaskBloc, context);
             },
           ), */
-        /* ListTile(
+          ListTile(
               leading: Icon(Icons.label),
               title: Text("Lables"),
               subtitle: StreamBuilder(
@@ -90,26 +127,25 @@ class AddTaskScreen extends StatelessWidget {
               ),
               onTap: () {
                 _showLabelsDialog(context);
-              }),*/
+              }),
 
-
-
-    ListTile(
-    leading: Icon(Icons.map),
-    title: Text("Location"),
-    subtitle: Text("No Location Assigned Yet"),
-    onTap: () {
-    showSnackbar(_scaffoldState, "Comming Soon");
-    },
-    ),
-    ListTile(
-    leading: Icon(Icons.mode_comment),
-    title: Text("Comments"),
-    subtitle: Text("No Comments"),
-    onTap: () {
-    showSnackbar(_scaffoldState, "Comming Soon");
-    },
-    ),
+          ListTile(
+            leading: Icon(Icons.map),
+            title: Text("Location"),
+            subtitle: Text("No Location Assigned Yet"),
+            onTap: () {
+              showSnackbar(_scaffoldState, "Comming Soon");
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.mode_comment),
+            title: Text("Comments"),
+            subtitle: Text("No Comments"),
+            onTap: () {
+//              _showCommentDialog(context);
+              showSnackbar(_scaffoldState, "Comming Soon");
+            },
+          ),
           /*ListTile(
             leading: Icon(Icons.timer),
             title: Text("Reminder"),
@@ -198,6 +234,28 @@ class AddTaskScreen extends StatelessWidget {
         });
   }
 
+  Future<String> _showCommentDialog(BuildContext context) async {
+    return await showDialog<String>(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            content: TextField(),
+            actions: <Widget>[
+              FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context, "");
+                  },
+                  child: Text("CANCEL",
+                      style: TextStyle(color: Theme.of(context).accentColor))),
+              FlatButton(
+                  onPressed: () {},
+                  child: Text("SAVE",
+                      style: TextStyle(color: Theme.of(context).accentColor)))
+            ],
+          );
+        });
+  }
+
   List<Widget> buildProjects(
     AddTaskBloc createTaskBloc,
     BuildContext context,
@@ -231,8 +289,7 @@ class AddTaskScreen extends StatelessWidget {
     List<Widget> labels = List();
     labelList.forEach((label) {
       labels.add(ListTile(
-        leading: Icon(Icons.label,
-            color: Color(label.colorValue), size: 18.0),
+        leading: Icon(Icons.label, color: Color(label.colorValue), size: 18.0),
         title: Text(label.name),
         trailing: createTaskBloc.selectedLabels.contains(label)
             ? Icon(Icons.close)

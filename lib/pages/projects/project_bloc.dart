@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter_app/bloc/bloc_provider.dart';
-import 'package:flutter_app/pages/projects/project_db.dart';
 import 'package:flutter_app/pages/projects/project.dart';
+import 'package:flutter_app/pages/projects/project_db.dart';
 import 'package:flutter_app/utils/color_utils.dart';
 
 class ProjectBloc implements BlocBase {
@@ -46,7 +46,7 @@ class ProjectBloc implements BlocBase {
     _colorController.sink.add(colorPalette);
   }
 
-  void refresh(){
+  void refresh() {
     _loadProjects(isInboxVisible);
   }
 }

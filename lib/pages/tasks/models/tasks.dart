@@ -36,7 +36,7 @@ class Tasks {
       @required this.title,
       @required this.projectId,
       this.comment = "",
-      this.dueDate =-1,
+      this.dueDate = -1,
       this.priority = Status.PRIORITY_4,
       this.tasksStatus = TaskStatus.PENDING}) {
     if (this.dueDate == -1) {

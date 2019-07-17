@@ -1,8 +1,8 @@
 import 'package:flutter_app/db/app_db.dart';
-import 'package:flutter_app/pages/tasks/models/tasks.dart';
-import 'package:flutter_app/pages/projects/project.dart';
 import 'package:flutter_app/pages/labels/label.dart';
+import 'package:flutter_app/pages/projects/project.dart';
 import 'package:flutter_app/pages/tasks/models/task_labels.dart';
+import 'package:flutter_app/pages/tasks/models/tasks.dart';
 import 'package:sqflite/sqflite.dart';
 
 class TaskDB {

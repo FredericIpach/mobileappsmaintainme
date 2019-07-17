@@ -55,8 +55,7 @@ class CollapsibleExpansionTileState extends State<CollapsibleExpansionTile>
     _borderColor = ColorTween();
     _headerColor = ColorTween();
     _iconColor = ColorTween();
-    _iconTurns =
-        Tween<double>(begin: 0.0, end: 0.5).animate(_easeInAnimation);
+    _iconTurns = Tween<double>(begin: 0.0, end: 0.5).animate(_easeInAnimation);
     _backgroundColor = ColorTween();
 
     _isExpanded =
@@ -119,14 +118,12 @@ class CollapsibleExpansionTileState extends State<CollapsibleExpansionTile>
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           IconTheme.merge(
-            data:
-                IconThemeData(color: _iconColor.evaluate(_easeInAnimation)),
+            data: IconThemeData(color: _iconColor.evaluate(_easeInAnimation)),
             child: ListTile(
               onTap: toggle,
               leading: widget.leading,
               title: DefaultTextStyle(
-                style: Theme
-                    .of(context)
+                style: Theme.of(context)
                     .textTheme
                     .subhead
                     .copyWith(color: titleColor),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/bloc/bloc_provider.dart';
-import 'package:flutter_app/pages/labels/label_db.dart';
-import 'package:flutter_app/pages/projects/project_db.dart';
-import 'package:flutter_app/pages/tasks/bloc/add_task_bloc.dart';
-import 'package:flutter_app/pages/tasks/bloc/task_bloc.dart';
-import 'package:flutter_app/pages/tasks/task_db.dart';
 import 'package:flutter_app/pages/home/home_bloc.dart';
 import 'package:flutter_app/pages/home/side_drawer.dart';
+import 'package:flutter_app/pages/labels/label_db.dart';
+import 'package:flutter_app/pages/projects/project_db.dart';
 import 'package:flutter_app/pages/tasks/add_task.dart';
+import 'package:flutter_app/pages/tasks/bloc/add_task_bloc.dart';
+import 'package:flutter_app/pages/tasks/bloc/task_bloc.dart';
 import 'package:flutter_app/pages/tasks/task_completed/task_complted.dart';
+import 'package:flutter_app/pages/tasks/task_db.dart';
 import 'package:flutter_app/pages/tasks/task_widgets.dart';
 
 class HomePage extends StatelessWidget {

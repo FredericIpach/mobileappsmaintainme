@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/pages/tasks/models/tasks.dart';
+import 'package:flutter_app/utils/app_constant.dart';
 import 'package:flutter_app/utils/color_utils.dart';
 import 'package:flutter_app/utils/date_util.dart';
-import 'package:flutter_app/utils/app_constant.dart';
 
 class TaskRow extends StatelessWidget {
   final Tasks tasks;

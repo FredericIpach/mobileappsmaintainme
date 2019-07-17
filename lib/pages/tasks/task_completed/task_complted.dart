@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/bloc/bloc_provider.dart';
 import 'package:flutter_app/pages/tasks/bloc/task_bloc.dart';
 import 'package:flutter_app/pages/tasks/models/tasks.dart';
-import 'package:flutter_app/pages/tasks/task_db.dart';
 import 'package:flutter_app/pages/tasks/task_completed/row_task_completed.dart';
+import 'package:flutter_app/pages/tasks/task_db.dart';
 
 class TaskCompletedPage extends StatelessWidget {
   final TaskBloc _taskBloc = TaskBloc(TaskDB.get());
